@@ -1,0 +1,11 @@
+#version 120
+
+attribute vec3 teh_ultim8_vertices_brah;
+attribute vec2 teh_bootiful_textures;
+
+varying vec2 tex_coords;
+
+void main() {
+	tex_coords = teh_bootiful_textures;
+	gl_Position = vec4(teh_ultim8_vertices_brah, 1);
+}

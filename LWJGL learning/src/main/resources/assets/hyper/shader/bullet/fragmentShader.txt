@@ -1,0 +1,18 @@
+#version 120
+
+uniform vec4 color;
+uniform sampler2D sampler;
+uniform vec4 bounds;
+
+varying vec2 tex_coords;
+varying vec2 pos;
+
+void main() {
+	if(pos.x < bounds.x || pos.x > bounds.z || pos.y < bounds.y || pos.y > bounds.w)
+		discard;
+	vec4 c = texture2D(sampler, tex_coords);
+	if(c.b == 0 && c.g == 0)
+		gl_FragColor = color*c;
+	else
+		gl_FragColor = c;
+}

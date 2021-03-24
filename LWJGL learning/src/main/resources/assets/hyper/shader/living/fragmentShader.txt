@@ -1,0 +1,32 @@
+#version 120
+
+uniform sampler2D sampler;
+uniform sampler2D weapon;
+uniform vec4 bounds;
+uniform float shadow_size;
+uniform float shadow_transparency;
+uniform float aim;
+
+varying vec2 tex_coords;
+varying vec4 vertices;
+varying vec2 pos;
+
+void main() {
+	if(pos.x < bounds.x || pos.x > bounds.z || pos.y < bounds.y || pos.y > bounds.w)
+		discard;
+	vec2 coords = vec2(tex_coords.x*2-0.5,tex_coords.y*2);
+	coords.x = coords.x*cos(aim)+coords.y*sin(aim);
+	coords.y = coords.y*cos(aim)-coords.x*sin(aim);
+	if(coords.x<0 || coords.x > 1 || coords.y < 0 || coords.y>1){
+		coords.x=0;
+		coords.y=0;
+	}
+	vec4 color = texture2D(sampler, tex_coords);
+	vec4 colorwep = texture2D(sampler, tex_coords);
+	if(colorwep.a >0.2)
+		gl_FragColor = colorwep;
+	else if(length(vertices.xy) < shadow_size && color.a < 0.1)
+		gl_FragColor = vec4(0, 0, 0, shadow_transparency);
+	else
+		gl_FragColor = color;
+}
