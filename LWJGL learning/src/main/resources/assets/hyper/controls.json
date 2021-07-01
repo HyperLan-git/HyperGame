@@ -6,33 +6,87 @@
                {
                   "sub": [
                      {
-                        "sensibility": 0.01,
+                        "sensibility": 0.2,
                         "name": "RIGHT",
-                        "type": "JOYSTICK",
-                        "value": 2
+                        "type": "KEYBOARD",
+                        "value": 68
                      },
                      {
-                        "sensibility": 0.01,
+                        "sensibility": 0.2,
+                        "name": "UP",
+                        "type": "KEYBOARD",
+                        "value": 87
+                     },
+                     {
+                        "sensibility": 0.2,
+                        "name": "LEFT",
+                        "type": "KEYBOARD",
+                        "value": 65
+                     },
+                     {
+                        "sensibility": 0.2,
+                        "name": "DOWN",
+                        "type": "KEYBOARD",
+                        "value": 83
+                     }
+                  ],
+                  "name": "MOVE",
+                  "type": "SUB"
+               },
+               {
+                  "sub": [
+                     {
+                        "sensibility": 0.2,
                         "name": "DOWN",
                         "type": "JOYSTICK",
                         "value": 5
                      },
                      {
-                        "sensibility": 0.01,
+                        "sensibility": 0.2,
                         "name": "LEFT",
                         "type": "JOYSTICK",
                         "value": 8
                      },
                      {
-                        "sensibility": 0.01,
+                        "sensibility": 0.2,
                         "name": "UP",
                         "type": "JOYSTICK",
                         "value": 11
+                     },
+                     {
+                        "sensibility": 0.2,
+                        "name": "RIGHT",
+                        "type": "JOYSTICK",
+                        "value": 2
                      }
                   ],
                   "name": "AIM",
                   "type": "SUB"
                },
+               {
+                  "sensibility": 0.2,
+                  "name": "DEFEND",
+                  "type": "KEYBOARD",
+                  "value": 32
+               },
+               {
+                  "sensibility": 0.2,
+                  "name": "RELOAD",
+                  "type": "KEYBOARD",
+                  "value": 82
+               },
+               {
+                  "sensibility": 0.2,
+                  "name": "SHOOT",
+                  "type": "MOUSE",
+                  "value": 0
+               }
+            ],
+            "name": "0",
+            "type": "SUB"
+         },
+         {
+            "sub": [
                {
                   "sub": [
                      {
@@ -43,15 +97,15 @@
                      },
                      {
                         "sensibility": 0.2,
-                        "name": "RIGHT",
-                        "type": "JOYSTICK",
-                        "value": 0
-                     },
-                     {
-                        "sensibility": 0.2,
                         "name": "UP",
                         "type": "JOYSTICK",
                         "value": 7
+                     },
+                     {
+                        "sensibility": 0.2,
+                        "name": "RIGHT",
+                        "type": "JOYSTICK",
+                        "value": 0
                      },
                      {
                         "sensibility": 0.2,
@@ -64,81 +118,27 @@
                   "type": "SUB"
                },
                {
-                  "sensibility": 0.2,
-                  "name": "DEFEND",
-                  "type": "JOYSTICK",
-                  "value": 3
-               },
-               {
-                  "sensibility": 0.2,
-                  "name": "SHOOT",
-                  "type": "JOYSTICK",
-                  "value": 4
-               },
-               {
-                  "sensibility": 0.2,
-                  "name": "RELOAD",
-                  "type": "BUTTON",
-                  "value": 0
-               }
-            ],
-            "name": "1",
-            "type": "SUB"
-         },
-         {
-            "sub": [
-               {
                   "sub": [
                      {
-                        "sensibility": 0.2,
-                        "name": "DOWN",
-                        "type": "KEYBOARD",
-                        "value": 83
-                     },
-                     {
-                        "sensibility": 0.2,
-                        "name": "LEFT",
-                        "type": "KEYBOARD",
-                        "value": 65
-                     },
-                     {
-                        "sensibility": 0.2,
-                        "name": "UP",
-                        "type": "KEYBOARD",
-                        "value": 87
-                     },
-                     {
-                        "sensibility": 0.2,
-                        "name": "RIGHT",
-                        "type": "KEYBOARD",
-                        "value": 68
-                     }
-                  ],
-                  "name": "MOVE",
-                  "type": "SUB"
-               },
-               {
-                  "sub": [
-                     {
-                        "sensibility": 0.2,
-                        "name": "UP",
-                        "type": "JOYSTICK",
-                        "value": 11
-                     },
-                     {
-                        "sensibility": 0.2,
-                        "name": "RIGHT",
-                        "type": "JOYSTICK",
-                        "value": 2
-                     },
-                     {
-                        "sensibility": 0.2,
+                        "sensibility": 0.01,
                         "name": "DOWN",
                         "type": "JOYSTICK",
                         "value": 5
                      },
                      {
-                        "sensibility": 0.2,
+                        "sensibility": 0.01,
+                        "name": "RIGHT",
+                        "type": "JOYSTICK",
+                        "value": 2
+                     },
+                     {
+                        "sensibility": 0.01,
+                        "name": "UP",
+                        "type": "JOYSTICK",
+                        "value": 11
+                     },
+                     {
+                        "sensibility": 0.01,
                         "name": "LEFT",
                         "type": "JOYSTICK",
                         "value": 8
@@ -150,23 +150,23 @@
                {
                   "sensibility": 0.2,
                   "name": "SHOOT",
-                  "type": "MOUSE",
-                  "value": 0
-               },
-               {
-                  "sensibility": 0.2,
-                  "name": "RELOAD",
-                  "type": "KEYBOARD",
-                  "value": 82
+                  "type": "JOYSTICK",
+                  "value": 4
                },
                {
                   "sensibility": 0.2,
                   "name": "DEFEND",
-                  "type": "KEYBOARD",
-                  "value": 32
+                  "type": "JOYSTICK",
+                  "value": 3
+               },
+               {
+                  "sensibility": 0.2,
+                  "name": "RELOAD",
+                  "type": "BUTTON",
+                  "value": 0
                }
             ],
-            "name": "0",
+            "name": "1",
             "type": "SUB"
          }
       ],
