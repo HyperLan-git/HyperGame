@@ -49,4 +49,12 @@ public class Texture {
 		glActiveTexture(GL_TEXTURE0 + sampler);
 		glBindTexture(GL_TEXTURE_2D, id);
 	}
+
+	public Texture clone() {
+		Texture tex = new Texture();
+		tex.id = this.id;
+		tex.height = this.height;
+		tex.width = this.width;
+		return tex;
+	}
 }

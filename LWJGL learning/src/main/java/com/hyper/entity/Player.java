@@ -30,7 +30,7 @@ public abstract class Player extends LivingEntity {
 		WALKING = new FacingSprite(walking);
 	}
 
-	protected FacingSprite texturesIdle = IDLE, texturesWalking = WALKING;
+	protected FacingSprite texturesIdle = IDLE.clone(), texturesWalking = WALKING.clone();
 
 	private boolean moving = false;
 

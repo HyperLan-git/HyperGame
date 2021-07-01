@@ -1,0 +1,24 @@
+[
+	{
+		"name" : "square1x1",
+		"vertices" : [-0.5, -0.5, 0.5, -0.5, 0.5, 0.5, -0.5, 0.5],
+		"texture" : [0, 1, 1, 1, 1, 0, 0, 0],
+		"indices" : [0, 1, 2, 0, 3, 2],
+		"mode" : "triangles"
+	},
+	{
+		"name" : "square2x2",
+		"vertices" : [-1, -1, 1, -1, 1, 1, -1, 1],
+		"texture" : [0, 1, 1, 1, 1, 0, 0, 0],
+		"indices" : [0, 1, 2, 0, 3, 2],
+		"mode" : "triangles"
+	},
+	{
+		"name" : "lasercast",
+		"vertices" : [0.55, -1, 500, -1, 500, 1, 0.55, 1],
+		"texture" : [0.55, 1, 1, 1, 1, 0, 0.55, 0],
+		"indices" : [0, 1, 2, 0, 3, 2],
+		"mode" : "triangles"
+	}
+
+]

@@ -2,13 +2,16 @@ package com.hyper.entity.bullet;
 
 import java.awt.Color;
 
+import org.joml.Vector2f;
+
 import com.hyper.Game;
 import com.hyper.collision.CollisionHandler;
 import com.hyper.collision.RectangularHitbox;
 import com.hyper.entity.DamageSource;
-import com.hyper.entity.Entity;
-import com.hyper.entity.LivingEntity;
 import com.hyper.entity.DamageSource.DamageType;
+import com.hyper.entity.Entity;
+import com.hyper.entity.Knockback;
+import com.hyper.entity.LivingEntity;
 import com.hyper.io.Resource;
 import com.hyper.render.Texture;
 
@@ -35,7 +38,8 @@ public class Laser extends Projectile {
 			this.dead = true;
 		for(Entity e : this.world.getEntities()) if(e instanceof LivingEntity && e != this.getShooter())
 			if(CollisionHandler.collides(e.getHitbox(), this.hitbox)) {
-				((LivingEntity)e).damage(new DamageSource(DamageType.LASER, this.getDamage(), this.getShooter(), this.getHitstun()));
+				((LivingEntity)e).damage(new DamageSource(DamageType.LASER, this.getDamage(), this.getShooter(),
+						new Knockback(this.getHitstun(), new Vector2f((float)Math.cos(this.rotation), (float)Math.sin(this.rotation)))));
 				this.setDead();
 				return;
 			}

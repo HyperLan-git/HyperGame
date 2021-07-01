@@ -78,7 +78,8 @@ public abstract class LivingEntity extends Entity {
 	
 	public boolean damage(DamageSource source) {
 		this.health -= source.getAmount();
-		this.hitstunTimer = source.getHitstun();
+		this.hitstunTimer = source.getHitstun().getStun();
+		this.motion.set(source.getHitstun().getKb());
 		return true;
 	}
 

@@ -1,5 +1,7 @@
 package com.hyper.entity;
 
+import org.joml.Vector2f;
+
 public class DamageSource {
 	public enum DamageType {
 		BULLET,
@@ -15,17 +17,17 @@ public class DamageSource {
 
 	private final DamageType type;
 	private final float amount;
-	private float stun;
+	private Knockback stun;
 	private final Entity source;
 
-	public DamageSource(DamageType type, float amount, Entity source, float stun) {
+	public DamageSource(DamageType type, float amount, Entity source, Knockback stun) {
 		this.type = type;
 		this.amount = amount;
 		this.source = source;
 		this.stun = stun;
 	}
 
-	public DamageSource(DamageType type, float amount, float stun) {
+	public DamageSource(DamageType type, float amount, Knockback stun) {
 		this(type, amount, null, stun);
 	}
 
@@ -35,7 +37,7 @@ public class DamageSource {
 	 */
 	@Deprecated
 	public DamageSource(float amount) {
-		this(DamageType.ENVIRONEMENT, amount, 5);
+		this(DamageType.ENVIRONEMENT, amount, new Knockback(5, new Vector2f()));
 	}
 
 	public DamageType getType() {
@@ -50,7 +52,7 @@ public class DamageSource {
 		return source;
 	}
 	
-	public float getHitstun() {
+	public Knockback getHitstun() {
 		return stun;
 	}
 }

@@ -42,4 +42,14 @@ public class FacingSprite extends Texture {
 	public void bind(int sampler) {
 		this.textures[direction.ordinal()].bind(sampler);
 	}
+	
+	@Override
+	public FacingSprite clone() {
+		Texture[] tex = new Texture[4];
+		for(int i = 0; i < 4; i++) {
+			tex[i] = textures[i].clone();
+		}
+		FacingSprite result = new FacingSprite(tex);
+		return result;
+	}
 }

@@ -1,0 +1,27 @@
+#version 120
+
+attribute vec3 teh_ultim8_vertices_brah;
+attribute vec2 teh_bootiful_textures;
+
+uniform mat4 projection;
+uniform vec2 entity_pos;
+uniform vec2 shadow_center;
+uniform float rotation;
+uniform float size;
+
+varying vec2 tex_coords;
+varying vec4 vertices;
+varying vec2 pos;
+
+void main() {
+	tex_coords = teh_bootiful_textures;
+	vec3 temp;
+	temp.x = teh_ultim8_vertices_brah.x * cos(rotation) + teh_ultim8_vertices_brah.y * sin(rotation);
+	temp.x = temp.x*size;
+	temp.y = teh_ultim8_vertices_brah.y * cos(rotation) - teh_ultim8_vertices_brah.x * sin(rotation);
+	temp.y = temp.y*size;
+	temp.z = teh_ultim8_vertices_brah.z;
+	vertices = vec4(temp, 1) + vec4(shadow_center, 0, 0);
+	gl_Position = projection * vec4(temp, 1);
+	pos = gl_Position.xy;
+}

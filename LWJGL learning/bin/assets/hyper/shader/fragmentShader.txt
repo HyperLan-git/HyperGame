@@ -1,0 +1,12 @@
+#version 120
+
+uniform sampler2D sampler;
+uniform vec4 bounds;
+
+varying vec2 tex_coords;
+varying vec2 pos;
+void main() {
+	if(pos.x < bounds.x || pos.x > bounds.z || pos.y < bounds.y || pos.y > bounds.w)
+		discard;
+	gl_FragColor = texture2D(sampler, tex_coords);
+}
