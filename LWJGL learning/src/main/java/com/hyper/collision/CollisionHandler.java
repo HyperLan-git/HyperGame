@@ -9,6 +9,7 @@ import com.hyper.entity.LivingEntity;
 public final class CollisionHandler {
 	public static final float pushPrecision = 0.0005f;
 
+	//FIXME wtf is this make it cleaner
 	public static boolean collides(Hitbox hitbox, Hitbox other) {
 		if(hitbox instanceof AABB && other instanceof AABB)
 			return collides((AABB)hitbox, (AABB)other);
@@ -48,7 +49,7 @@ public final class CollisionHandler {
 
 	public static void push(Hitbox source, Hitbox toPush) {
 		int i = 0;
-		if(source.getPosition().distance(toPush.getPosition()) == 0)
+		if(source.getPosition().distanceSquared(toPush.getPosition()) == 0)
 			source.translate(new Vector2f((float)Math.random()*0.001f, (float)Math.random()*0.001f));
 		while(collides(source, toPush)) {
 			Vector2f v = new Vector2f(source.getPosition()).sub(toPush.getPosition()).normalize();

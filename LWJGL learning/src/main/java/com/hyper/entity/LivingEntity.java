@@ -1,6 +1,7 @@
 package com.hyper.entity;
 
 import org.joml.Vector2f;
+import org.joml.Vector4f;
 
 import com.hyper.Game;
 import com.hyper.weapon.Weapon;
@@ -51,6 +52,12 @@ public abstract class LivingEntity extends Entity {
 		game.livingShader.setUniform("size", entitySize);
 		game.livingShader.setUniform("projection", game.camera.getProjectionMatrix().translate(getPosition().x * scale, getPosition().y * scale, 0).scale(scale));
 		game.livingShader.setUniform("bounds", game.camera.getBounds());
+		
+		System.out.println(hitstunTimer > 0);
+		if(this.hitstunTimer > 0)
+			game.livingShader.setUniform("flashcolor", new Vector4f(1, 0, 0, 0.25f));
+		else
+			game.livingShader.setUniform("flashcolor", new Vector4f(0));
 
 		game.modelHandler.getModel(getModelName()).render();
 	}

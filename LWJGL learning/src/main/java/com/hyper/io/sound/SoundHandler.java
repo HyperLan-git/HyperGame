@@ -63,6 +63,7 @@ public class SoundHandler {
 			SoundSource s = new SoundSource(true, true);
 			s.setBuffer(soundBuffer.getBufferId());
 			this.soundSources.add(s);
+			s.setGain(0.1f);
 			s.play();
 		} catch (Exception e) {
 			e.printStackTrace();
