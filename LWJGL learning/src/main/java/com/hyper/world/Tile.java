@@ -81,7 +81,7 @@ public class Tile {
 	}
 
 	public void onWalkOn(LivingEntity e) {
-		e.setMotion(e.getMotion().mul(0.15f, new Vector2f()));
+		e.setMotion(e.getMotion().mul(0.3f, new Vector2f()));
 		e.setSliding(false);
 	}
 }
